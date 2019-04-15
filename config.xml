@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="rmc3.audioconference" version="3.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Audio Conferencing</name>
-    <icon src="www/img/icon.png" />
     <description>Multi-user (many-to-many) audio chat using mesh networking model.</description>
     <author email="muazkh@gmail.com" href="https://www.webrtc-experiment.com/">Muaz khan</author>
     <content src="index.html" />
