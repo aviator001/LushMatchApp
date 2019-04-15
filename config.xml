@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.lushmatch.app" version="1.0.0" versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>LushMatch.com</name>
-    <description>
-		A new experience from the pioneeers of sugar daddy dating - the first site based on disruptive technologies
-	</description>
-    <author email="g@txt.am" href="http://gaysugardaddyfinder.com">
-		Gautam Sharma
-	</author>
-    <content src="app.html" />
+<widget id="rmc3.audioconference" version="3.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Audio Conferencing</name>
+    <icon src="www/img/icon.png" />
+    <description>Multi-user (many-to-many) audio chat using mesh networking model.</description>
+    <author email="muazkh@gmail.com" href="https://www.webrtc-experiment.com/">Muaz khan</author>
+    <content src="index.html" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
@@ -28,11 +25,8 @@
                 </dict>
             </array>
         </config-file>
-        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
-            <string>1 on 1 Video IM</string>
-        </config-file>
         <config-file parent="NSMicrophoneUsageDescription" platform="ios" target="*-Info.plist">
-            <string>1 on 1 Audio Calls</string>
+            <string>WebRTC uses your microphone to make voice calls.</string>
         </config-file>
     </platform>
     <preference name="Fullscreen" value="false" />
@@ -44,21 +38,6 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarBackgroundColor" value="#e4685d" />
-    <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="prerendered-icon" value="false" />
-    <preference name="stay-in-webview" value="true" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="false" />
-    <preference name="disable-cursor" value="true" />
-    <preference name="android-installLocation" value="auto" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
-    <preference name="ChildBrowser" value="false" />
-    <preference name="ErrorUrl" value="err.html" />
-    <preference name="FullScreen" value="true" />
     <plugin name="cordova-plugin-iosrtc" spec="latest" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
