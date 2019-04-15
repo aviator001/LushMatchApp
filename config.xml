@@ -7,7 +7,7 @@
     <author email="g@txt.am" href="http://gaysugardaddyfinder.com">
 		Gautam Sharma
 	</author>
-    <content src="index.html" />
+    <content src="app.html" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
