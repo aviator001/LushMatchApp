@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+		<meta name="description" content="A sugar daddy dating site that connects handsome wealthy and caring men to hot young women. Worlds first sugar daddy site to use disruptive SMS messaging. Find a Sugar Daddy today!" />		
+		<meta name="Author" content="Gautam Sharma" />		
+		<meta name="format-detection" content="telephone=no"/>
+		<title>Sugar Daddy & Sugar Baby Dating | lushmatch.com</title>
+		<link rel="canonical" href="https://lushmatch.com"
+		<link rel="icon" href="favicon.png">
+		<link href="https://lushmatch.com/assets/css/font-awesome.css" rel="stylesheet" >
+		<link href="https://lushmatch.com/assets/css/jquery-confirm.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/shadows.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/animate.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Open+Sans:300' rel='stylesheet' type='text/css'>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			div,span,p,td {
+				font-family:Open sans!Important
+			}
+			input[type=checkbox]{
+				background-color: #f0f0f0;
+				width:30px;
+				height:30px;
+			}
+			input[type=checkbox]:checked{
+				background-color: silver;
+				width:30px;
+				height:30px;
+			}
+			.loginP {
+				font-family:Open Sans!Important;
+				font-weight:300;
+				color:maroon;
+				font-size:32px!Important;
+				text-align:center
+			}
+			.genderP {
+				font-family:Open Sans!Important;
+				font-weight:bold;
+				color:#333;
+				font-size:16px!Important;
+				width:100%;
+				text-align:center;
+			}
+			.locationP {
+				font-family:Open Sans;
+				font-weight:300;
+				color:#333;
+				font-size:21px;
+				width:100%;
+				text-align:center;
+			}
+			.general_infoP {
+				font-family:Open Sans;
+				font-weight:300;
+				color:#000;
+				font-size:16px;
+				width:100%;
+				text-align:left;
+				border-radius:4px;
+				background:#fcfcfc;
+				padding:10px;
+			}			
+	</style>
+	<script src="js/custom_menu.js"></script>
+	
+	</head>
+	<body>
+
+	<script>
+		function $$(obj) {
+			return document.getElementById(obj)
+		}
+		function showWait() {
+			if($$('yes')) $$('yes').style.display='none'
+			if($$('no')) $$('no').style.display='none'
+			var di=document.createElement('div')
+			di.style.cssText='position:absolute;left:0;right:0;margin:auto;top:100px;height:400px;width:80%;max-width:650px;text-align:center;color:#000;font-size:2em;font-weight:300'
+			$$('profiles').innerHTML=''
+			$$('profiles').appendChild(di)
+			di.innerHTML="<img src='assets/images/load.gif' style='width:100px'><br><br><div>FETCHING PROFILES<br>PLEASE WAIT</div>"	
+		}
+		setTimeout('showWait()',1)
+	</script>
+	
+	<section class="page-wrapper gray wow zoomIn" style="width:100%;text-align:center;margin-top:5px">
+	<div id="con" class="container" style="overflow:auto;background:url(https://gaysugardaddyfinder.com/assets/images/bgs.jpg) center no-repeat;background-size:cover;height:100%">
+		<div style="display:none">
+			<input type="checkbox"id="photos" style="margin:10px" checked /><span style="font-size:18px;font-family:Open Sans;margin-top:10px;position:absolute"> Show Profiles with Photos Only</span>
+		</div>
+		<div id="profiles" class="" style="text-align:center;margin-top:25px;background:url(https://gaysugardaddyfinder.com/assets/images/bgs.jpg) center no-repeat;background-size:cover;">
+		</div>
+
+	</div>
+	</section>
+	<script src="https://lushmatch.com/assets/js/jquery.js"></script>
+	<script src="https://lushmatch.com/assets/js/jquery-confirm.min.js"></script>
+	<script src="https://lushmatch.com/assets/js/common.js"></script>
+	<script src="https://lushmatch.com/assets/js/events.js"></script>
+	<script src="https://lushmatch.com/assets/js/jquery-ui.js"></script>
+	<script src="https://lushmatch.com/assets/js/bootstrap.js"></script>
+	<script src="https://lushmatch.com/jsSocketNode.js"></script>
+<script>
+	document.onclick=yesNo
+	function yesNo(e) {
+		var dv=('p'+currMID)
+		if (e.target.id=="yes") {
+			setTimeout('like('+dv+')',10)
+		} else if (e.target.id=="no") {
+			setTimeout('dislike('+dv+')',10)
+		}
+	}
+	function viewMessageDetail(xid,xlogin) {
+		setCookie('chatting_with',xid)
+		setCookie('chatting_with_login',xlogin)
+		location.href='viewMessage.html?xid='+xid
+	}
+	
+	var nextMID,smids
+	nextMID=getCookie('nextMID')
+	if (!nextMID) nextMID=qs('id')
+	if (qs('type')=='search') nextMID=qs('id')
+	function getIP() {
+		$.getJSON("https://jsonip.com/?callback=?", function (data) {
+			setCookie('ip',data.ip);
+		});
+		$$('con').style.height=window.innerHeight+'px'
+	}
+	
+	setTimeout('getIP()',1)
+	setTimeout('getLocation()',1)
+	setTimeout('loadProfiles(10)',1)
+	
+	function back_to_search() {
+		location.href='index.html?display=search&search='+qs('search')
+	}
+	
+	function send_mail(id) {
+		setCookie('chatting_with',id)
+		location.href='sendMail.html?to_member_id='+id
+	}
+	
+	function send_sms() {
+		location.href='sendSMS.php?to_member_id='+qs('id')
+	}
+	function view_img(io){
+		location.href='viewAlbum.html?member_id='+currMID
+	}
+
+	
+	var imgG, div, data=[], looking_for, watchID, tmr, hidden, shown, active
+	var currMID
+	var mids=[]
+	var str='', fn, active='2'
+	var ctr
+	var imgG, div, data=[], looking_for, watchID, tmr
+	var currUR=100000
+	currMID=qs('id')
+	setCookie('currMID',qs('id'))
+
+	
+	function mobile_render() {
+	}
+	function getLocation(type,ox) {
+		var request = $.ajax({
+			url: 'https://lushmatch.com/x_location.php',
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+			//	setTimeout('mobile_render()',1)
+			}
+		})
+	}
+	var x_start=0,saved=''
+	var miles=getCookie('x_miles')
+	if (!miles) miles=100
+	function showSearchHeader() {
+		$$('ttl').style.background='aliceblue'
+		$$('ttl').style.opacity='1'
+		$$('tt3').style.opacity='1'
+		$$('ttl').style.color='#000'
+		$$('ttl').style.fontSize='15px'
+		$$('tt2').innerHTML='<b>Showing Search Results. Click here to return</b>'
+		$$('tt3').innerHTML='<span style="font-size:24px"><b>1</b> of ' + smids.length+'</span>'
+	}
+	var profileBatchCount,ur,currUR,urs=[],prevEl
+	var wh=window_height()*1
+	function loadProfiles(no) {
+		ctr=0
+		var type=qs('type')
+		var str=''
+		if (type=='search') {
+			var url='https://lushmatch.com/x_get_browse_profiles.php?member_id='+nextMID+'&type=search&count='+no+'&search='+qs('search')+'&x_start='+x_start+'&miles='+miles
+		} else {
+			var url='https://lushmatch.com/x_get_browse_profiles.php?member_id='+currMID+'&type='+qs('browse')+'&count='+no
+			if (qs('browse')=='popular') {
+				url='https://lushmatch.com/x_get_browse_profiles.php?user_rights='+currUR+'&type='+qs('browse')+'&count='+no+'&member_id='+currMID
+			}
+		}
+		console.log(url)
+		
+		var request = $.ajax({
+			url: url,
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				$('#yes').show()
+				$('#no').show()
+				$$('profiles').innerHTML=''
+				var data1=msg.split('|')[0]
+				var sql=msg.split('|')[1]
+				console.log(sql)
+				data=JSON.parse(data1)
+				console.log(data)
+				profileBatchCount=data.length
+				console.log(profileBatchCount)
+				var www=''
+				for (var i=0;i<profileBatchCount;i++) {
+					str=''
+						if (data[i]) {
+							setCookie('chatting_with_login',data[i].login)
+							setCookie('chatting_with',data[i].id)
+							var currEl=$$('p'+data[i].id)
+							var general_info='No Profile Text'
+							if (data[i].general_info) general_info=data[i].general_info.substr(0,50)
+							str+=	'<div class="col-md-4 col-sm-4 col-xs-12" style="width:100%;max-width:100%;position:fixed;left:0;right:0;margin:auto;padding:0;margin-top:25px">'
+							str+=	'	<div class="thumbbox1" style="padding:0;background:#f0f0f0;;max-width:500px;margin:auto">'
+							str+=	'		<div class="team-thumb overlay-image view-overlay" style="background:white;border:none">'
+							str+=	'			<img onerror="this.src=\'assets/images/no_photo.png\'" id="imgProfile'+i+'" onclick="view_img(this)" alt="" style="min-height:'+(window_height()-300)+'px'+';max-height:'+(window_height()-300)+'px'+';max-width:500px;min-width:500px">'
+							str+=	'		</div>'
+							str+=	'		<div style="left:0;right:0;position:;background:#f0f0f0;min-height:180px;width:100%;max-width:500px;margin:auto;padding-top:25px">'
+							str+=	'			<div id="profileText'+i+'" class="team-info">'
+							str+=	'				<div id="login'+i+'" class="loginP">'+data[i].login.toUpperCase().substr(0,10)+'</div>'
+							str+=	'				<div class="genderP">'
+							str+=	'					<span id="gender'+i+'">'+data[i].gender.toUpperCase()+'</span><span id="age1">'+' AGE: '+data[i].age+'</span>'
+							str+=	'				</div>'
+							str+=	'				<div id="location'+i+'" class="locationP">'+data[i].location.toUpperCase().substr(0,15)+'</div>'
+							str+=	'				<div id="rating'+i+'" style="display:none;margin-top:10px;margin-bottom:10px;">'
+							str+=	'					<i class="fa fa-star" style="color:gold;font-size:1.5em;padding-right:5px"></i>'
+							str+=	'					<i class="fa fa-star-o" style="font-size:1.5em;padding-right:5px"></i>'
+							str+=	'					<i class="fa fa-star-o" style="font-size:1.5em;padding-right:5px"></i>'
+							str+=	'					<i class="fa fa-star-o" style="font-size:1.5em;padding-right:5px"></i>'
+							str+=	'					<i class="fa fa-star-o" style="font-size:1.5em;padding-right:5px"></i>'
+							str+=	'				</div>'
+							str+=	'				<div class="team-social" style="">'
+							str+=	'					<a href="javascript:initMsg(\''+data[i].login+'\')"><i class="fa fa-comment-o" style="width:60px;height:60px;padding:20px;border-radius:40px;background:;background-size:60px 60px;font-size:1.8em;color:silver;margin-left:10px;text-shadow:inset 0 0 10px #000"></i></a>'
+							str+=	'					<a href="javascript:send_mail('+data[i].id+')"><i class="fa fa-envelope-o" style="width:60px;height:60px;padding:20px;border-radius:40px;background:;background-size:60px 60px;font-size:1.8em;color:silver;margin-left:10px;text-shadow:inset 0 0 10px #000"></i></a>'
+							str+=	'					<a href="javascript:toggle_favs()" style="text-decoration:none"><i id="fav'+data[i].id+'" class="fa fa-heart-o"  style="width:60px;height:60px;padding:20px;border-radius:40px;background:;background-size:60px 60px;font-size:1.8em;color:silver;margin-left:10px;text-shadow:inset 0 0 10px #000"></i></a>'
+							str+=	'					<a href="javascript:video_call(\''+data[i].login+'\')"><i class="fa fa-video-camera" style="width:60px;height:60px;padding:20px;border-radius:40px;background:;background-size:60px 60px;font-size:1.8em;color:silver;margin-left:10px;text-shadow:inset 0 0 10px #000"></i></a>'
+							str+=	'				</div>'
+							str+=	'				<div style="width:100%;position:absolute;height:100px;background:;bottom:50px;max-width:500px;margin:auto">'
+							str+=	'					<table style="width:100%;max-width:500px">'
+							str+=	'						<tr>'
+							str+=	'							<td style="width:25%;text-align:center">'
+							str+=	'								<a href="javascript:dislike(\''+'p'+data[i].id+'\')"><img id="no" src="https://gaysugardaddyfinder.com/assets/images/rest_prev.png" style="width:50px"></a>'
+							str+=	'							</td>'
+							str+=	'							<td style="width:50%;text-align:center">'
+							str+=	'							</td>'
+							str+=	'							<td style="width:25%;text-align:center">'
+							str+=	'								<a href="javascript:like(\''+'p'+data[i].id+'\')"><img id="yes" src="https://gaysugardaddyfinder.com/assets/images/rest_next.png" style="width:50px"></a>'
+							str+=	'							</td>'
+							str+=	'						</tr>'
+							str+=	'					</table>'
+							str+=	'				</div>'
+							str+=	'			</div>'
+							str+=	'		</div>'
+							str+=	'	</div>'
+							str+=	'</div>'
+							id=data[i].id
+							ur=data[i].user_rights
+							if (mids.indexOf(id)<0) {
+								var div=document.createElement('div')
+								div.id='p'+id
+								div.innerHTML=str
+								if (i==0) saved=div
+								$$('profiles').appendChild(div)
+								mids[i]=id
+								urs[i]=ur
+								currMID=id
+								currUR=ur
+								if (data[i].filename_1=='') fn = 'https://lushmatch.com/assets/images/no_photo.png'
+									else fn='https://lushmatch.com/sb/'+data[i].filename_1
+								$$('imgProfile'+i).src=fn
+								if (qs('type')) {
+									if (data.length>1) {
+										detectswipe('p'+id, myfunction);	
+									}
+								}
+								prevEl=data[i].id+''
+							}
+					} else {
+						console.log('err')
+					}
+					$$("imgProfile"+i).style.maxHeight=(wh-300)+'px'
+					$$("imgProfile"+i).style.minHeight=(wh-300)+'px'
+				}
+				nextMID = Math.min.apply(Math, mids)
+				setCookie('nextMID',nextMID)
+				x_start=x_start+profileBatchCount
+				console.log('ratings:')
+				console.log(urs)
+				console.log('mids:')
+				console.log(mids)				
+			}
+		})
+	}
+	var objData=[]
+	function video_call(to_login) {
+		video_invite_sms(to_login,getCookie('login'))
+		objData={
+					data				: 	'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/new_video_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW VIDEO CALL FROM '+ to_login + '</span><a href="inbox#'+getCookie('mid')+'"><img onclick="START VIEDEO IM" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/open_email.png"></a><img onclick="closeToaster()" src="https://gaysugardaddyfinder.com/assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>',
+					toUser				: 	to_login,
+					type				: 	'NEW_VIDEO',
+					fromUser			: 	getCookie('login'),
+					fromLongCode		: 	getCookie('long_code')
+		}
+		socket.send(JSON.stringify({type:'NEW_VIDEO', data: objData}))
+		//location.href='https://terrawire.com:9001/demos/?login='+getCookie('login')+'&action=1'
+		location.href='video.html'
+		console.log(objData)
+	}
+	
+
+	function video_invite_sms(to_login, from_login) {
+		$.dialog({url:'https://lushmatch.com/sendSMS.php?to_login='+to_login+'&from_login='+from_login+'&from_long_code='+getCookie('long_code'),success:function(data){console.log(data);location.href='https://lushmatch.com/channel.html?login='+getCookie('login')+'&action=1'}})
+	}
+	
+	function toggle_favs() {
+		var url = 'https://lushmatch.com/x_add_fav.php?to=' + currMID + '&from=' + getCookie('mid')
+		console.log(url)
+		var request = $.ajax({
+			url: url,
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				$.dialog(msg.trim())
+				if (msg.trim()=='User added to favorites!') {
+					$$('fav'+currMID).style.color='red'
+				} else {
+					$$('fav'+currMID).style.color='silver'
+				}
+			}
+		})
+	}
+
+	function chk_fav(){
+		var member_id=currMID
+		var oi=document.getElementById('fav'+member_id)
+		var request = $.ajax({
+			url: 'https://lushmatch.com/x_chk_fav.php?member_id='+member_id, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=="true")  $$('fav'+currMID).style.color='red'
+					else $$('fav'+currMID).style.color='silver'
+			}
+		})		
+	}
+			
+	function add_hot_list(member_id,htype) {
+		var member_id=currMID
+		var request = $.ajax({
+			url: 'https://lushmatch.com/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype+'&mid='+getCookie('mid'), 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+				}
+			}
+		})
+	}
+
+	var cycle,tmrY,tmrN,scale
+	function like(el) {
+		if (typeof el !== "object") {
+			el=$$(el)
+		}
+		add_hot_list(currMID,'CLICKED_YES')
+		scale=2
+		if ($$('yes')) $$('yes').style.transform='scale('+scale+')'
+		setTimeout(function(){
+			recoverYes()
+		},250)
+		prevMID=currMID
+		currMID=mids[mids.indexOf(currMID)-1]
+		currUR=urs[urs.indexOf(currUR)-1]
+		if (currMID==undefined) currMID = prevMID
+		setCookie('nextMID',currMID)
+		nextMID=currMID
+		if (currUR==undefined) currUR = Math.min.apply(Math, urs)
+		add_hot_list(currMID,'VIEWED_PROFILE')
+		el.className='animated rollOut'
+		
+		if (ctr==(profileBatchCount-2)) load_next()
+			else ctr++
+	}
+	
+	function load_next() {
+		var x=10
+		setTimeout('showWait()',1)
+		setTimeout('loadProfiles('+x+')',1)
+	}
+
+	var animate=true
+	function dislike(el) {
+		scale=2
+		$$('no').style.transform='scale('+scale+')'
+		setTimeout(function(){
+			recoverNo()
+		},250)
+		prevMID=currMID
+		currMID=el.id.replace('p','')
+		currUR=urs[urs.indexOf(currUR)-1]
+		if (currMID==undefined) currMID = prevMID
+		setCookie('nextMID',currMID)
+		nextMID=currMID
+		if (currUR==undefined) currUR = Math.min.apply(Math, urs)
+		add_hot_list(currMID,'VIEWED_PROFILE')
+		el.className='animated slideLeft'
+		el.style.display='none'
+		if (ctr==(profileBatchCount-2)) load_next()
+			else ctr++
+	}
+	
+	function recoverYes() {
+		if (scale>=1) {
+			scale=scale-0.1
+			if ($$('yes')) $$('yes').style.transform='scale('+scale+')'
+			tmrY=setTimeout('recoverYes()',10)
+		} else {
+			scale=1
+			clearTimeout(tmrY)
+		}
+	}
+	function recoverNo(obj) {
+		if (scale>=1) {
+			scale=scale-0.1
+			$$('no').style.transform='scale('+scale+')'
+			tmrN=setTimeout('recoverNo()',10)
+		} else {
+			scale=1
+			clearTimeout(tmrN)
+		}
+	}
+	setCookie('chatting_with',qs('id'))
+	//alert(getCookie('chatting_with'))
+
+	var winH, winW
+
+	function window_height() {
+		if (document.body) {
+		 winH = document.body.offsetHeight;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetHeight ) {
+			winH = document.documentElement.offsetHeight;
+			return winH
+		}
+
+		if (window.innerHeight && window.innerHeight) {
+			 winH = window.innerHeight;
+			 return winH;
+		}
+	}		
+		
+	
+		
+function detectswipe(el,func) {
+	  swipe_det = new Object();
+      swipe_det.sX = 0;
+      swipe_det.sY = 0;
+      swipe_det.eX = 0;
+      swipe_det.eY = 0;
+      var min_x = 100;  //min x swipe for horizontal swipe
+      var max_x = 50;  //max x difference for vertical swipe
+      var min_y = 100;  //min y swipe for vertical swipe
+      var max_y = 50;  //max y difference for horizontal swipe
+      var direc = "";
+      ele = document.getElementById(el);
+	  ele.addEventListener('touchstart',function(e){
+		xtt=e.type
+		var t = e.touches[0];
+        swipe_det.sX = t.screenX; 
+        swipe_det.sY = t.screenY;
+      },false);
+      ele.addEventListener('touchmove',function(e){
+        xtt=e.type
+		e.preventDefault();
+        var t = e.touches[0];
+        swipe_det.eX = t.screenX; 
+        swipe_det.eY = t.screenY;    
+      },false);
+      ele.addEventListener('touchend',function(e){
+        //horizontal detection
+        if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y)))) {
+          if(swipe_det.eX > swipe_det.sX) direc = "r";
+          else direc = "l";
+        }
+        //vertical detection
+        if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x)))) {
+          if(swipe_det.eY > swipe_det.sY) direc = "d";
+          else direc = "u";
+        }
+    
+        if (direc != "") {
+          if(typeof func == 'function') func(el,direc);
+        }
+        direc = "";
+      },false);  
+		
+    }
+
+    function myfunction(el,d) {
+		if(xtt=='touchmove') {
+			if (d=='l') setTimeout('dislike('+el+')',10)
+			if (d=='r') setTimeout('like('+el+')',10)
+			if (d=='u') setTimeout('like('+el+')',10)
+			if (d=='d') setTimeout('dislike('+el+')',10)
+		 } else {
+			return false
+		 }
+    }
+		
+	$("#searchLocation").autocomplete({
+		source: "https://lushmatch.com/x_ac_location.php",
+		minLength: 1,
+		select: function( event, ui ) {
+			$('#searchLocation').val( ui.item.value);
+		}
+	});
+
+	$("#quickSearchTerm").autocomplete({
+		position: { my : "left top", at: "left top", of: ".portfolio-filter-list" },
+		source: "https://lushmatch.com/x_ac_location.php",
+		minLength: 1,
+		select: function( event, ui ) {
+			$('#quickSearchTerm').val( ui.item.value);
+		}
+	});
+	$( "#quickSearchTerm" ).autocomplete( "option", "appendTo", "#xresults" );
+
+</script>
+</body>
+</html>

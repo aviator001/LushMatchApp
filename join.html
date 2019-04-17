@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>gaysugardaddyfinder.com :: Sugar Daddy Dating Site</title>
+	<meta name="keywords" content="sugar daddy,sugar baby,sugardaddy,wealthy  men, dating,Sugar Daddy dating site, daddy dating, find daddy, find golddigger, gaysugardaddyfinder" />
+	<meta name="description" content="A place that connects handsome wealthy and caring  men to hot young  males" />
+	<meta name="Author" content="Gautam Sharma" />
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!-- Fav Icons -->
+	<link rel="icon" href="https://gaysugardaddyfinder.com/assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="https://gaysugardaddyfinder.com/assets/img/favicon.ico">
+	<!-- WEB FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet" type="text/css" />
+	<link href="https://gaysugardaddyfinder.com/assets/css/layout-responsive.css" rel="stylesheet" type="text/css" />
+	<link href="https://gaysugardaddyfinder.com/assets/css/layout.css" rel="stylesheet" type="text/css" />
+	<link href="https://gaysugardaddyfinder.com/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="https://gaysugardaddyfinder.com/assets/css/magic.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
+	<style>
+		.tooltipsy {
+			color: #0093D9;
+			background-size: cover;
+			border: none;
+			border-radiuse: 4px;
+			text-shadow: 0px 0px 1px #333;
+			opacity:
+		}
+		
+		.eee,
+		.content {
+			width: 400px;
+		}
+		
+		.biggy {
+			margin-left: -100px;
+			margin-top: -200px;
+			width: 200px;
+			height: 200px;
+			border: 5px solid white;
+			opacity: 1;
+			box-shadow: 0 0 25px #333
+		}
+		
+		input {
+			disbled: true
+		}
+		
+		text {
+			disbled: true
+		}
+	</style>
+	<script>
+		function dinit() {
+
+		}
+	</script>
+	<style>
+		.fullx {
+			top: 60px!Important;
+			display: block;
+			text-align: center;
+			min-height: 300px;
+			max-height: 300px;
+		}
+		
+		.block {
+			text-align: center;
+			font-size: 1.8em;
+			width: 100%;
+			font-family: Open Sans;
+			color: black;
+			font-weight: 300;
+			margin-top: 0px;
+			margin-bottom: 5px
+		}
+	</style>
+</head>
+
+<body onload="dinit()" style="text-align:center">
+	<script src="assets/js/custom_menu_no_auth.js"></script>
+	<br>
+	<span style="display:none">
+
+					<div id="f0" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">NAME</label>					
+
+						<br><input class="form-control" type="text" style="width:80%;height:60px;position:absolute;margin:auto;left:0;right:0" id="name">
+
+					</div>	
+
+					<div id="f1" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">LOGIN</label>					
+						<div>Choose a login name for your account!</div>
+						<br><input class="form-control" type="text" style="width:80%;height:60px;position:absolute;margin:auto;left:0;right:0" id="login">
+							<input id="bn_login" type="button" onclick="ask()" value="NEXT" style="display:none;font-size:1.2em;background:#f0f0f0;width:80px;height:60px;color:#fff;border-radius:5px;border:none;padding:10px;position:absolute;left:0;right:0;margin:auto;top:50px">
+							<input type="hidden" id="x_login">
+
+					</div>	
+
+					<br>
+
+					<div id="f2" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">EMAIL</label>						
+						<div>Please enter your email address</div>
+
+						<br><input class="form-control" type="text" style="width:80%;height:60px;position:absolute;margin:auto;left:0;right:0" id="email">
+						<input type="hidden" id="x_email">
+
+					</div>
+
+					<br>
+
+					<div id="f3" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">I AM A</label>					
+
+						<select onchange="ask()" class="form-control" type="select" id="gender" style="height:60px;margin:20px;width:92%">
+
+							<option name=""></option>
+
+							<option name="Sugar Daddy">Sugar Daddy</option>
+
+							<option name="Sugar Baby">Sugar Baby</option>
+
+						</select>
+						<input type="hidden" id="x_gender">
+						<input id="bn_gender" type="button" onclick="ask()" value="NEXT" style="display:none;font-size:1.2em;background:#f0f0f0;width:80px;height:60px;color:#fff;border-radius:5px;border:none;padding:10px;position:absolute;left:0;right:0;margin:auto;top:50px">
+
+					</div>
+
+					<br>
+
+					<div id="f4" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">CREATE A PASSWORD</label>				
+
+						<br><input class="form-control" type="text" style="width:80%;height:60px;position:absolute;margin:auto;left:0;right:0" id="pswd">								
+						<input type="hidden" id="x_pswd">
+					</div>				
+
+					<br>
+
+					<div id="f5" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">AGE</label>
+
+						<br><input class="form-control" type="text" style="width:80%;height:60px;position:absolute;margin:auto;left:0;right:0" id="age">						
+						<input type="hidden" id="x_age">
+
+
+					</div>
+
+					<br>
+
+					<div id="f6" class="fullx" style="text-align:center;font-weight:300;font-style:normal;color:#333;text-shadow:none;margin:10px">					
+
+						<label class="block h2">EXPECTATIONS</label>
+
+						<textarea onchange="ask()" class="form-control" id="general_info" style="width:80%;height:90px;margin:auto"></textarea>						
+						<input type="hidden" id="x_general_info">
+						<input id="bn_general_info" type="button" onclick="ask()" value="NEXT" style="display:none;font-size:1.2em;background:#f0f0f0;width:80px;height:60px;color:#fff;border-radius:5px;border:none;padding:10px;position:absolute;left:0;right:0;margin:auto;top:50px">
+
+					</div>								
+
+					<br>
+
+				</span>
+	<h1 style='margin-top:50px;font-family:Open Sans;color:black;font-weight:300'>NEW ACCOUNT SIGNUP</h1>
+	<div id="main" style="width:95%;max-width:500px;padding:0px;position:absolute;margin:auto;left:0;right:0;margin:auto;display:none;-webkit-box-sizing: border-box;">
+		<div id="aa">
+			<div id="white-row" style="box-shadow:0 0 20px #333;background:#f0f0f0;width:100%;margin:0;padding:20px;border-radius:8px">
+				<div id="form_errors" class="alert alert-info" style="display:none"></div>
+				<div class="row">
+					<div class="form-group" style="max-height:220px">
+						<div id="qs"></div>
+						<div style="width:100%;text=align:center;position:absolute;top:120px">
+							<input disabled id="bn" type="button" onclick="ask()" value="NEXT" style="font-size:1.2em;background:#f0f0f0;width:80px;height:60px;color:#fff;border-radius:5px;border:none;padding:10px;position:absolute;left:0;right:0;margin:auto;top:50px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="mainBreadCrumbs" style="background:none;width:95%;max-width:500px;padding:0px;position:absolute;margin:auto;left:0;right:0;margin:auto;display:none;text-align:center;margin-top:300px">
+		<table style="width:100%;text-align:center;background:none">
+			<tr>
+				<td>
+					<a href="javascript:show(0)"><img id="i0" src="https://gaysugardaddyfinder.com/assets/images/blt2.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i1" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i2" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i3" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i4" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i5" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i6" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+				<td>
+					<a href="javascript:show(0)"><img id="i7" src="https://gaysugardaddyfinder.com/assets/images/blt0.png" style="width:25px" onmouseover="iswap(this)"></a>
+				</td>
+			</tr>
+	</div>
+	<div id="geo_loc"></div>
+	</div>
+	</div>
+	<input type="hidden" name="source" id="phonegap">
+	<input type="hidden" name="PHONE" id="phone">
+	<input type="hidden" name="photo" id="photo">
+	<input type="hidden" name="location" id="location">
+	<input type="hidden" name="street" id="street">
+	<input type="hidden" name="cc_city" id="cc_city">
+	<input type="hidden" name="cc_state" id="cc_state">
+	<input type="hidden" name="zip" id="zip">
+	<input type="hidden" name="filename_1" id="filename_1">
+	<!-- /REGISTER -->
+	<script>
+		var arn = []
+		var start_magic = false
+		var magic_w = '65px'
+		var magic_h = '65px'
+	</script>
+	<script src="https://gaysugardaddyfinder.com/assets/js/jquery.js"></script>
+	<script async defer src="https://gaysugardaddyfinder.com/assets/js/bootstrap.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-pdjniiApMjAV7j92Nfn5zgd3k2s3ze4&libraries=places" type="text/javascript"></script>
+	<script src="https://gaysugardaddyfinder.com/assets/js/jquery.geocomplete.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
+	<script type="text/javascript">
+		var currFld, currrVal
+		var ctr = 0,
+			arr = [],
+			lat, lng
+		setTimeout(function() {
+			ask()
+		}, 1500)
+		for (var j = 0; j <= 7; j++) {
+			arr.push($$('f' + j))
+		}
+		arn.push('mobile')
+		arn.push('mobile')
+		arn.push('login')
+		arn.push('email')
+		arn.push('gender')
+		arn.push('pswd')
+		arn.push('age')
+		arn.push('general_info')
+
+		function enable() {
+			$$('bn').style.background = '#777'
+			$$('bn').style.disabled = 'false'
+			$$('bn').disabled = false
+		}
+
+		function update(th) {
+			currFld = th.id
+			currVal = th.value
+			setCookie(th.id, th.value)
+			if (th.id == 'gender') {
+				$$('bn').style.display = 'block'
+			}
+			if (th.id == 'pswd') {
+				if (getCookie(th.id).length>3) {
+					$$('bn').style.display='block'
+				} else {
+					$$('bn').style.display = 'none'
+				}					
+			}
+			if (th.id == 'age') {
+				if (getCookie(th.id).length==2) {
+					$$('bn').style.display='block'
+				} else {
+					$$('bn').style.display = 'none'
+				}
+			}
+			console.log('***' + getCookie(th.id) + '***')
+		}
+
+		function show(s) {
+
+		}
+
+		function iswap() {
+		}
+
+		function check(fd) {
+			console.log(fd.value)
+			if (!fd.value == '') {
+				$$('bn').style.background = '#777'
+				$$('bn').style.disabled = 'false'
+				$$('bn').disabled = false
+			}
+		}
+		var ky='',jy='',km=''
+		function checkit(e) {
+			var th=e.target
+			if (e.target.id=='mobile') {
+				validate=true
+				km=km+String.fromCharCode(e.keyCode).toLowerCase()
+				if ((e.keyCode==8) || ((e.keyCode==46))){
+					km=km.substring(0,km.length-2).toLowerCase()
+				}
+				setTimeout(function(){
+					if (km.length>2) {
+						$('#mErr').html('')
+						$('.btn-blue').attr('disabled',false)
+						$('.btn-blue').attr('style','background:#3498db')
+						validate_field('mobile',e.target.value)
+					}
+				},500)
+			}
+
+
+
+		
+		}
+		$$('bn').style.display=''
+
+		function checkit2(e) {
+			currVal=e.target.value
+			currFld=e.target.id	
+			$$('bn').style.display='block'
+
+			if (e.target.id=='email') {
+				$$('x_email').value=e.target.value
+				setTimeout(function(){
+					if ($$('x_email').value.length>2) {
+						$$('bn').style.background = '#777'
+						$$('bn').style.disabled = 'false'
+						$$('bn').disabled = false
+						validate_field('email',$$('x_email').value)
+					}
+				},500)
+			}
+
+			if (e.target.id=='pswd') {
+				$$('x_pswd').value=e.target.value
+				if ($$('x_pswd').value.length>3) {
+					$$('bn').style.background = '#777'
+					$$('bn').style.disabled = 'false'
+					$$('bn').disabled = false
+				} else {
+					$$('bn').style.background = '#f0f0f0'
+					$$('bn').style.disabled = 'true'
+					$$('bn').disabled = true
+				}
+			}
+			if (e.target.id=='age') {
+				$$('x_age').value=e.target.value
+				if (($$('x_age').value*1 > 17) && ($$('x_age').value*1 < 100)) {
+					$$('bn').style.background = '#777'
+					$$('bn').style.disabled = 'false'
+					$$('bn').disabled = false
+				} else {
+					$$('bn').style.background = '#f0f0f0'
+					$$('bn').style.disabled = 'true'
+					$$('bn').disabled = true
+				}
+			}
+			if (e.target.id=='general_info') {
+				$$('x_general_info').value=e.target.value
+				if ($$('x_general_info').value =='') {
+					validate=false
+					return false
+				}
+			}
+			if (e.target.id=='login') {
+				validate=true
+				$$('x_login').value=e.target.value
+				setTimeout(function(){
+					if ($$('x_login').value.length>2) {
+						$$('bn').style.display = 'none'
+						$$('bn_login').style.display = 'block'
+						validate_field('login',$$('x_login').value)
+					}
+				},500)
+			}	
+			if (e.target.id=='gender') {
+				validate=true
+				$$('x_gender').value=e.target.value
+				if ($$('x_gender').value.length>0) {
+					$$('bn').style.display = 'none'
+					$$('bn_gender').style.display = 'block'
+				}
+			}
+		}
+		
+		window.onkeyup=checkit2
+		window.onkeypress=checkit
+		var validate=true, emailDone=false, mobileDone=false
+		function ask() {
+			if (ctr > 1) 
+				if (currVal=='') {
+					$.alert({
+						theme: 'modern',
+						content: 'Invalid ' + currFld,
+						title: false,
+						buttons: {
+							OK: {
+								text: 'OK',
+								btnClass: 'btn-red',
+								action: function() {}
+							}
+						}
+					})			
+				}
+			
+			if (ctr > 1) console.log(currFld + ' is: ' + currVal)
+			if (currFld == 'email') {
+				if ((currVal.indexOf('@') < 0) || (currVal.indexOf('.') < 0)) {
+				$$('bn').style.display='none'
+				validate=false
+				$.alert({
+					theme: 'modern',
+					content: 'Invalid Email',
+					title: false,
+					buttons: {
+						OK: {
+							text: 'OK',
+							btnClass: 'btn-red',
+							action: function() {}
+						}
+					}
+				})
+				return false
+			} else {
+				$$('bn').style.display=''
+			}
+			}
+			if (currFld == 'pswd') {
+				if (currVal.length < 3) {
+				validate=false
+				$.alert({
+					theme: 'modern',
+					content: 'Password must be at least 3 characters or more',
+					title: false,
+					buttons: {
+						OK: {
+							text: 'OK',
+							btnClass: 'btn-red',
+							action: function() {}
+						}
+					}
+				})
+				return false
+			}}
+			if (currFld == 'age') {
+				if ((currVal*1)<18) {
+				validate=false
+				$.alert({
+					theme: 'modern',
+					content: 'Invalid Age. Must be numeric and greater than 18',
+					title: false,
+					buttons: {
+						OK: {
+							text: 'OK',
+							btnClass: 'btn-red',
+							action: function() {}
+						}
+					}
+				})
+				return false
+			}}
+			if (ctr > 0) $$('i' + (ctr - 1)).src = 'assets/images/blt2.png'
+			$('#aa').show()
+			$$('white-row').className = 'magictime swashOut'
+			if (ctr > 0) {
+				$('#mainBreadCrumbs').show()
+			}
+			if (ctr == 7) {
+				create_fb_user()
+			} else {
+				setTimeout(function() {
+					$$('white-row').className = ''
+					if (ctr == 0) $('#main').hide()
+					else $('#main').show()
+					if (ctr < 8) ctr++
+						else return false
+					if (arr[ctr - 1]) $$('qs').innerHTML = arr[ctr - 1].innerHTML
+						else return false
+					$$('qs').style.height = '400px'
+					arr[ctr - 1].style.height = '400px'
+					$$('bn').style.display='none'
+				}, 1000)
+			}
+		}
+		function validate_field(fld,val) {
+			url = 'x_validate.php?field='+fld+'&value='+val
+			console.log(url)
+			var request = $.ajax({
+				url: url,
+				cache: false,
+				success: function(msg) {
+					if (msg) {
+						if (fld=='mobile') {
+							$('#mErr').html('<div style="color:red;background:lightyellow;padding:5px;font-size:14px">Mobile Number '+val+' already exists. Re-enter mobile number, or login with existing number</div>')
+						} else {
+							$.alert(fld+' ' + val + ' already exists in the database')
+						}
+						validate=false
+						$$('bn').style.disabled = 'true'
+						$$('bn').disabled = true
+						$$('bn').style.background = '#f0f0f0'
+						$('.btn-blue').attr('disabled',true)
+						$('.btn-blue').attr('style','background:#f0f0f0')
+						return false
+						emailDone=true
+						mobileDone=true
+					} else {
+						$$('bn').style.display='block'
+						validate=true
+						$$('bn').style.disabled = 'false'
+						$$('bn').disabled = false
+						$$('bn').style.background = '#777'
+					}
+				}
+			})
+		}
+
+		function $$(objID) {
+			return document.getElementById(objID)
+		}
+
+		setTimeout('getMobile()', 1)
+
+		function create_fb_user() {
+			var x = ''
+			var location
+			var age
+			var gender = getCookie('gender')
+			var looking_for = getCookie('looking_for')
+			if (gender == '') {
+				gender = 'Sugar Baby'
+				looking_for = 'Sugar Daddy'
+			}
+			x += 'mob=' + getCookie('mobile')
+			x += '&password=' + $$('x_pswd').value
+			x += '&email=' + $$('x_email').value
+			x += '&login=' + $$('x_login').value
+			x += '&gender=' + getCookie('gender')
+			x += '&looking_for=' + getCookie('looking_for')
+			x += '&general_info=' + $$('x_general_info').value
+			x += '&age=' + $$('x_age').value
+			x += '&cc_city=' + getCookie('city')
+			x += '&cc_state=' + getCookie('state')
+			x += '&cc_street=' + getCookie('street_no') + ' ' + getCookie('street')
+			x += '&lat=' + getCookie('lat')
+			x += '&lng=' + getCookie('lng')
+			x += '&zip=' + getCookie('zip')
+			x += '&location=' + getCookie('city') + ' ' + getCookie('state')
+			x += '&aff=' + getCookie('aff')
+			x += '&pro=' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000
+
+			wait('Creating Account')
+			var url = 'https://gaysugardaddyfinder.com/create.php?' + x
+			console.log(url)
+			var request = $.ajax({
+				url: url,
+				type: "GET",
+				dataType: "html",
+				cache: false,
+				success: function(msg) {
+					hide()
+					$('#mainBreadCrumbs').hide()
+					msg = msg.split('|')
+					var res = msg[0]
+					setCookie('login', msg[1])
+					setCookie('mid', msg[2])
+					setCookie('mobile', msg[4])
+					if (res == 'OK') {
+						$.confirm({
+							columnClass: 'small',
+							title: '<b>Success! Profile Created.</b>',
+							content: '<div style="width:100%">Congratulations!<br><br>Your  account has been created!<br><br>Next, you must upload a few photos, by clicking on upload photos below (very strongly adviced)<br><br>Alternatively, click on settings to modify your profile, password etc.</div>',
+							buttons: {
+								upload: {
+									text: 'Upload Photo',
+									btnClass: 'btn-red',
+									action: function() {
+										window.location.href = '/uploadPhoto'
+									}
+								},
+								settings: {
+									text: 'Modify Settings',
+									btnClass: 'btn-red',
+									action: function() {
+										window.location.href = '/settings'
+									}
+								},
+								home: {
+									text: 'Members Home',
+									btnClass: 'btn-success',
+									action: function() {
+										window.location.href = '/home'
+									}
+								},
+							}
+						});
+					} else {
+						$.alert({
+							theme: 'modern',
+							content: 'Registration Failed!',
+							title: false,
+							buttons: {
+								OK: {
+									text: 'OK',
+									btnClass: 'btn-red',
+									action: function() {
+										location.reload()
+									}
+								}
+							}
+						})
+					}
+				}
+			})
+		}
+
+		var mobile, city
+
+		function send(mobile, ms) {
+			mobile = isValidMobile(mobile)
+			setCookie('mobile', mobile)
+			url = 'http://txt.am/gateway/sms.php?to=13109339303&from=19256669444&msg=heyyyy+oink+oye'
+			var request = $.ajax({
+				url: url,
+				dataType: "jsonp",
+				cache: false,
+				success: function(msg) {
+
+				}
+			})
+		}
+
+		function getMobile() {
+			$.confirm({
+				columnClass: 'small',
+				title: '<b>Enter Mobile Number</b>',
+				content: '<div style="width:100%;height:200px">' +
+					'<div>' +
+					'<input id="mobile" class="www_box3" placeholder="10 Digit Mobile Number" type="text" style="padding:5px;border-top:2px solid orange;font-size:1em;color:#000;background:#f0f0f0;padding:10px;margin-left:10px;width:300px;height:50px;text-shadow:0 0 2px #fff"></input>' +
+					'</div>' +
+					'<div style="width:300px;padding:0px;height:195px;margin-top:15px;font-size:0.8em">' +
+					'<table class="" id="" style="font-size:1em;border-top:4px solid cyan;padding:0px;margin-left:10px;width:100%;height:150px;border-radius:4px;border:none"><tr><td colspan=2 style="padding:10px;font-size:1.2em!Important;font-family:Open Sans;color:grey;font-size:16px"><div id="mErr"></div>Please enter your 10 digit mobile number<br><br>Under no circumstances will your number be disclosed, ever. You will be assigned a anon number, which weill be used to message other members. </td></tr></table>' +
+					'</div></div>',
+				buttons: {
+					formSubmit: {
+						text: 'NEXT',
+						btnClass: 'btn-blue',
+						action: function() {
+							if (validate===false) return false
+							if (validate) {
+								var mobile = this.$content.find('#mobile').val();
+								if (is_valid_mobile(mobile)) {
+									setCookie('mobile', mobile)
+									setTimeout('locChk()', 1)
+									ctr = 1
+									ask()
+								} else {
+									return false
+								}
+							}
+						}
+					},
+				}
+			});
+		}
+
+		function is_valid_mobile(mob) {
+			var number = mob
+			var m = /^(1\s?)?((\([0-9]{3}\))|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$/
+			if (!m.test(number)) {
+				validate = false
+				$.alert({
+					theme: 'modern',
+					content: 'Invalid Mobile! Format: 10 Digits only.<br>NO Country Code(1);<br>(123) 456-7890 or XXXYYYZZZZ or 123.456.7890',
+					title: false,
+					buttons: {
+						OK: {
+							text: 'OK',
+							btnClass: 'btn-red',
+							action: function() {
+								return true
+							}
+						}
+					}
+				})
+			} else {
+				return true
+			}
+		}
+
+		var placeSearch, autocomplete;
+		var componentForm = {
+			street_number: 'short_name',
+			route: 'long_name',
+			locality: 'long_name',
+			administrative_area_level_1: 'short_name',
+			country: 'long_name',
+			postal_code: 'short_name'
+		};
+		/* 
+			Date:
+			/^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$/
+		*/
+		function initAutocomplete() {
+			autocomplete = new google.maps.places.Autocomplete(
+				(document.getElementById('autocomplete')), {
+					types: ['geocode']
+				});
+
+			autocomplete.addListener('place_changed', fillInAddress);
+		}
+
+		function fillInAddress() {
+			var place = autocomplete.getPlace();
+			for (var i = 0; i < place.address_components.length; i++) {
+				var addressType = place.address_components[i].types[0];
+				if (componentForm[addressType]) {
+					var val = place.address_components[i][componentForm[addressType]];
+					document.getElementById(addressType).innerHTML = val;
+				}
+			}
+		}
+
+		function geolocate() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var geolocation = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+					var circle = new google.maps.Circle({
+						center: geolocation,
+						radius: position.coords.accuracy
+					});
+					autocomplete.setBounds(circle.getBounds());
+				});
+			}
+		}
+
+		function locChk() {
+			var options = {
+				enableHighAccuracy: true
+			};
+			watchID = navigator.geolocation.getCurrentPosition(getPosition, onError, options);
+		}
+
+		function onError(err) {
+
+		}
+
+		function getPosition(position) {
+			//	if (getCookie('accurate') && getCookie('zip')) return false
+			var geocoder = new google.maps.Geocoder();
+			var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			geocoder.geocode({
+				'latLng': latlng
+			}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					if (results[0]) {
+						formatted_address = results[0].formatted_address
+						var address = "",
+							city = "",
+							state = "",
+							zip = "",
+							country = "";
+						for (var i = 0; i < results[0].address_components.length; i++) {
+							var addr = results[0].address_components[i];
+							if (addr.types[0] == 'country')
+								country = addr.long_name;
+							else if (addr.types[0] == 'street_address')
+								address = address + addr.long_name;
+							else if (addr.types[0] == 'establishment')
+								address = address + addr.long_name;
+							else if (addr.types[0] == 'route')
+								address = address + addr.long_name;
+							else if (addr.types[0] == 'postal_code')
+								zip = addr.short_name;
+							else if (addr.types[0] == ['administrative_area_level_1'])
+								state = addr.short_name;
+							else if (addr.types[0] == ['locality'])
+								city = addr.long_name;
+						}
+						street_no = results[0].address_components[0].short_name
+						street = results[0].address_components[1].short_name
+						full_address = street_no + ', ' + street + ' ' + city + ' ' + state + ' ' + zip + ' ' + country
+						console.log(full_address)
+						if (street) $$('geo_loc').innerHTML = full_address
+						else $$('geo_loc').innerHTML = city + ' ' + state + ' ' + zip
+						setCookie('location', street_no + ' ' + street + ' ' + city + ', ' + state + ' ' + zip)
+						setCookie('x-location', city + ', ' + state + ' ' + zip)
+						setCookie('street_no', street_no)
+						setCookie('street', street)
+						setCookie('city', city)
+						setCookie('state', state)
+						setCookie('zip', zip)
+						setCookie('lat', position.coords.latitude)
+						setCookie('lng', position.coords.longitude)
+						setCookie('accurate', '1')
+					}
+				}
+			});
+		}
+
+		function wait(txt, op) {
+			if (!op) var op = 0.8
+			if (!txt) var txt = 'Please wait...'
+			tx = document.createElement('div')
+			var text = document.createElement('span')
+			md = document.createElement('div')
+			im = document.createElement("img")
+			tx.id = 'tx'
+			md.id = 'md'
+			im.id = 'im'
+			im.src = "assets/images/wait.png"
+			im.style.cssText = 'width:60px;position:absolute;left:10px;bottom:-5px'
+			md.style.cssText = 'width:100%;height:100%;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;z-index:999999999999999999999;background:#000;opacity:' + op * 1
+			tx.style.cssText = 'border-radius:4px;color:#000;background:#f0f0f0;opacity:0.8;height:50px;text-align:center;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;z-index:99999999999999999999999;padding-top:20px;font-family:Open Sans;font-size:0.8em'
+			text.style.cssText = 'position:absolute;left:80px;bottom:15px;color:#000;font-family:Open Sans;font-size:1em;text-shadow:1px 1px 1px #fff'
+			text.textContent = txt
+			document.documentElement.appendChild(md)
+			tx.appendChild(im)
+			tx.appendChild(text)
+			document.documentElement.appendChild(tx)
+			tx.style.width = txt.length * 9 + 85 + 'px'
+		}
+
+		function hide() {
+			$('#im').hide()
+			$('#md').hide()
+			$('#tx').hide()
+		}
+
+		function ntfy(str, xCol) {
+			if (!xCol) xCol = '#fff'
+			document.getElementById('notify').style.bottom = '10px'
+			document.getElementById('notify').style.right = '10px'
+			document.getElementById('notify').style.background = xCol
+			document.getElementById('notify').style.display = 'block'
+			document.getElementById('notify').style.opacity = '1'
+			document.getElementById('notify').style.padding = '10px'
+			document.getElementById('notify_txt').innerHTML = str
+			setTimeout('hide_ntfy()', 5000)
+		}
+
+		function hide_ntfy() {
+			document.getElementById('notify').style.display = 'none'
+			document.getElementById('notify_txt').innerHTML = ''
+		}
+
+		function noProceed() {
+			setCookie('location', city + ', ' + state + ' ' + zip)
+			setCookie('x-location', city + ', ' + state + ' ' + zip)
+			setCookie('street_no', 'NA')
+			setCookie('street', 'NA')
+			setCookie('city', city)
+			setCookie('state', state)
+			setCookie('zip', zip)
+			setCookie('lat', lat)
+			setCookie('lng', lng)
+			setCookie('accurate', 'No')
+		}
+
+		var wl = window.location.href;
+		var mob = (window.location.href.indexOf('file://') >= 0);
+
+		function setCookie(cname, cvalue) {
+			if (mob === true) {
+				window.localStorage.setItem(cname, cvalue);
+			} else {
+				var d = new Date();
+				d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+				var expires = "expires=" + d.toGMTString();
+				document.cookie = cname + "=" + cvalue + "; " + expires;
+			}
+		}
+
+		function getCookie(cname) {
+			if (mob === true) {
+				var cvalue = window.localStorage.getItem(cname);
+				return cvalue
+			} else {
+				var name = cname + "=";
+				var ca = document.cookie.split(';');
+				for (var i = 0; i < ca.length; i++) {
+					var c = ca[i].trim();
+					if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+				}
+				return "";
+			}
+		}
+
+		function delCookie(cname) {
+			if (mob === true) {
+				window.localStorage.removeItem(cname);
+			} else {
+				var d = new Date();
+				d.setTime(d.getTime());
+				var expires = "expires=" + d.toGMTString();
+				document.cookie = cname + "=" + "" + "; " + expires;
+			}
+		}
+
+		function clear_all() {
+			if (mob === true) {
+				window.localStorage.clear();
+			} else {
+				document.cookie.split(";").forEach(function(c) {
+					document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+				});
+			}
+		}
+
+		function jalert2(x) {
+			$.alert(x)
+		}
+
+		function xxx_send(mobile, ms) {
+			mobile = isValidMobile(mobile)
+			setCookie('mobile', mobile)
+			url = 'http://txt.am/gateway/sms.php?to=' + mobile + '&from=19256669444&msg=' + urlencode(ms)
+			var request = $.ajax({
+				url: url,
+				dataType: "jsonp",
+				cache: false,
+				success: function(msg) {
+
+				}
+			})
+		}
+
+		function send_sms(to) {
+			var from = '19256669444'
+				//message is stored in cookie 'sms_message'
+			console.log('sms.php?to=' + to + '&from=' + from)
+			var request = $.ajax({
+				url: 'sms.php?to=' + to + '&from=' + from,
+				cache: false,
+				success: function(msg) {
+					$.dialog({
+						title: '<span style="font-family:Open Sans!Important">SMS Message</span>',
+						columnClass: 'small',
+						boxWidth: '30%',
+						useBootstrap: false,
+						content: 'SMS Sent Successfully to ' + to,
+						bgOpacity: 0
+					});
+				}
+			})
+		}
+	</script>
+	<script async defer src="https://gaysugardaddyfinder.com/assets/js/jquery-ui.js"></script>
+</body>
+
+</html>
