@@ -302,7 +302,7 @@ ul.longarrowlist li:before {
 	background-size:cover;
 	background-position:center center;
 	z-index:1;
-	background-image:url(assets/img/header.jpg);
+	background-image:url(assets/img/mobile_header.jpg);
 	webkit-animation:10s ease-in;
 	-moz-animation:10s ease-in;
 	-o-animation:10s ease-in;
@@ -316,7 +316,7 @@ ul.longarrowlist li:before {
 	background-size:cover;
 	background-position:center center;
 	z-index:1;
-	background-image:url(assets/images/mobile_header.jpg);
+	background-image:url(assets/img/mobile_header.jpg);
 }
 .main-title {
 	font-weight:700;
