@@ -6,17 +6,17 @@
 		<meta name="description" content="A gay sugar daddy dating site that connects handsome wealthy and caring men to hot young women. Worlds first gay sugar daddy site to use disruptive SMS messaging. Find a Gay Sugar Daddy today!" />		
 		<meta name="Author" content="Gautam Sharma" />		
 		<meta name="format-detection" content="telephone=no"/>
-		<title>gay sugar daddy dating | GaySugarDaddyFinder.com</title>
+		<title>gay sugar daddy dating | lushmatch.com</title>
 		<link rel="canonical" href="">
-		<link rel="icon" href="https://gaysugardaddyfinder.com/assets/img/favicon.png">
-		<link href="https://gaysugardaddyfinder.com/assets/css/font-awesome.css" rel="stylesheet" >
+		<link rel="icon" href="https://lushmatch.com/assets/img/favicon.png">
+		<link href="https://lushmatch.com/assets/css/font-awesome.css" rel="stylesheet" >
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css" rel="stylesheet" />
-		<link href="https://gaysugardaddyfinder.com/assets/css/shadows.css" rel="stylesheet" />
-		<link href="https://gaysugardaddyfinder.com/assets/css/jquery-ui.css" rel="stylesheet" />
-		<link href="https://gaysugardaddyfinder.com/assets/css/dropzone.css" rel="stylesheet">
-		<link href="https://gaysugardaddyfinder.com/assets/css/bootstrap.css" rel="stylesheet">
-		<link href="https://gaysugardaddyfinder.com/assets/css/menu.css" rel="stylesheet">
-		<link href="https://gaysugardaddyfinder.com/assets/css/font-awesome.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/shadows.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/jquery-ui.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/dropzone.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/menu.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/font-awesome.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet"> 
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Open+Sans:300' rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,10 +31,10 @@
 		}
 		</style>
 </head>
-	<body style="background:#f0f0f0"><script src="https://gaysugardaddyfinder.com/assets/js/custom_menu_no_footer.js"></script>
+	<body style="background:#f0f0f0">
 
 	<div class="page-loader">
-			<img src="https://gaysugardaddyfinder.com/assets/img/loader.gif" alt="">
+			<img src="https://lushmatch.com/assets/img/loader.gif" alt="">
 		</div>
 
 	<section id="oSection" class="page-wrapper www_box"  style="width:100%;max-width:1200px;margin:auto;margin-top:0">
@@ -46,7 +46,7 @@
 			</div>
 
 			</div>
-			<img id="imgWait" src="https://gaysugardaddyfinder.com/assets/images/load.gif" alt="waiting for my sugar daddy or sugar baby" style="position:absolute;z-index:999999999999;margin-top:-500px;margin-left:-50px;width:100px;display:none">
+			<img id="imgWait" src="https://lushmatch.com/assets/images/load.gif" alt="waiting for my sugar daddy or sugar baby" style="position:absolute;z-index:999999999999;margin-top:-500px;margin-left:-50px;width:100px;display:none">
 		</div>
 	</section>
 	<div id="frmHolder">
@@ -75,13 +75,13 @@
 	<img id="img_loader" style="display:none;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/wait.gif">
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/jquery-ui.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/common.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/events.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/bootstrap.min.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/scripts.js"></script>
+<script src="https://lushmatch.com/assets/js/jquery-ui.js"></script>
+<script src="https://lushmatch.com/assets/js/common.js"></script>
+<script src="https://lushmatch.com/assets/js/events.js"></script>
+<script src="https://lushmatch.com/assets/js/bootstrap.min.js"></script>
+<script src="https://lushmatch.com/assets/js/scripts.js"></script>
 <script src="jsSocketNode.js"></script>
-<script src="https://gaysugardaddyfinder.com/assets/js/jquery-confirm.min.js"></script>
+<script src="https://lushmatch.com/assets/js/jquery-confirm.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-pdjniiApMjAV7j92Nfn5zgd3k2s3ze4&libraries=places" type="text/javascript"></script>
 <script src="dz/dropzone.min.js"></script>
 <script>
@@ -212,7 +212,7 @@
 	}
 	function getLocation(type,ox) {
 		var request = $.ajax({
-			url: 'https://gaysugardaddyfinder.com/php/x_location.php?'+location.href.split('https://gaysugardaddyfinder.com/')[1],
+			url: 'https://lushmatch.com/x_location.php',
 			type: "GET",
 			dataType: "html",
 			cache: false,
@@ -227,9 +227,9 @@
 	var ct=0, smids=[]
 
 	function getMail() {
-	console.log('https://gaysugardaddyfinder.com/x_view_message.php?xid='+qs('xid'))
+	console.log('https://lushmatch.com/x_view_message.php?xid='+qs('xid')+'&mid='+getCookie('mid'))
 		var request = $.ajax({
-			url: 'https://gaysugardaddyfinder.com/x_view_message.php?xid='+qs('xid')+'&mid='+getCookie('mid'),
+			url: 'https://lushmatch.com/x_view_message.php?xid='+qs('xid')+'&mid='+getCookie('mid'),
 			type: "GET",
 			dataType: "html",
 			cache: false,
@@ -451,7 +451,7 @@
 		message=message.replace(/\//g,'\/')
 
 		var from_u=getCookie('mid')
-		var url = encodeURI('https://gaysugardaddyfinder.com/x_send_mail.php?to=' + getCookie('chatting_with') + '&from=' + from_u + '&message=' + message + '&attach_id=' + getCookie('attach_id'))
+		var url = encodeURI('https://lushmatch.com/x_send_mail.php?to=' + getCookie('chatting_with') + '&from=' + from_u + '&message=' + message + '&attach_id=' + getCookie('attach_id'))
 		console.log(url)
 		jwait('sending')
 		var request = $.ajax({
@@ -464,7 +464,7 @@
 				jhide()
 				$$('mail_pad').value=''
 				$$('attachments').style.display='none'
-				socket.send(JSON.stringify({'type':'NEW_MAIL', 'data': {'fromUser':getCookie('login'),'toUser':getCookie('chatting_with_login'),'msg':'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/new_mail_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW MAIL FROM '+ getCookie('login').toUpperCase() + '</span><img onclick="viewMessageDetail('+getCookie('mid')+',\'' + getCookie('login') + '\')" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/open_email.png"><img onclick="closeToaster()" src="https://gaysugardaddyfinder.com/assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>'}}))
+				socket.send(JSON.stringify({'type':'NEW_MAIL', 'data': {'fromUser':getCookie('login'),'toUser':getCookie('chatting_with_login'),'msg':'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="https://lushmatch.com/assets/images/new_mail_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW MAIL FROM '+ getCookie('login').toUpperCase() + '</span><img onclick="viewMessageDetail('+getCookie('mid')+',\'' + getCookie('login') + '\')" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="https://lushmatch.com/assets/images/open_email.png"><img onclick="closeToaster()" src="https://lushmatch.com/assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>'}}))
 			}
 			
 		})

@@ -830,7 +830,7 @@ function $$(ox) {
 				$$('mail_pad').value=''
 				$$('attachments').style.display='none'
 				socket.send(JSON.stringify({'type':'NEW_MAIL', 'data': {'fromUser':getCookie('login'),'toUser':getCookie('chatting_with_login'),'msg':'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="assets/images/new_mail_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW MAIL FROM '+ getCookie('login').toUpperCase() + '</span><img onclick="viewMessageDetail('+getCookie('mid')+',\'' + getCookie('login') + '\')" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="assets/images/open_email.png"><img onclick="closeToaster()" src="assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>'}}))
-				location.href='viewMessage?xid='+to_member_id
+				location.href='viewMessage.html?xid='+to_member_id
 			}
 			
 		})
@@ -963,7 +963,7 @@ function $$(ox) {
 			cache: false,
 			success: function(msg) {
 				socket.send(JSON.stringify({'type':'NEW_MAIL', 'data': {'fromUser':getCookie('login'),'toUser':getCookie('chatting_with_login'),'msg':'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="assets/images/new_mail_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW MAIL FROM '+ getCookie('login').toUpperCase() + '</span><img onclick="viewMessageDetail('+getCookie('mid')+',\'' + getCookie('login') + '\')" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="assets/images/open_email.png"><img onclick="closeToaster()" src="assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>'}}))
-				location.href='viewMessage?xid=' + getCookie('chatting_with')
+				location.href='viewMessage.html?xid=' + getCookie('chatting_with')
 			}
 			
 		})
@@ -1011,7 +1011,7 @@ function $$(ox) {
 	}
 	
 	function read_notified_mail(xid) {
-		location.href='https://lushmatch.com/viewMessage?xid='+xid
+		location.href='https://lushmatch.com/viewMessage.html?xid='+xid
 	}
 	
 	function closeToaster() {
