@@ -293,6 +293,8 @@
 			var fmz=$('#3D')
 
 		</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>		
 		<br><br>
 <div class="container" style="margin:auto;position:absolute;left:0;right:0;display:block;width:100%;top:0px;padding-top:10px;BACKGROUND:aliceblue;height:100%;box-shadow: inset 0 0 10px #000">
 <div class="row">
@@ -383,7 +385,24 @@ mediaType: type});
 		}
 
 		function success1() {
-			alert('ok')
+			$.confirm({
+				buttons: {
+					b1: {
+						text: 'Upload Another', // text for button
+						btnClass: 'btn-blue', // class for the button
+						action: function(){
+							take_photo()
+						}
+					},
+					b2: {
+						text: 'Go Back', // text for button
+						btnClass: 'btn-red', // class for the button
+						action: function(){
+							history.go(-1)
+						}
+					}
+				}
+			});
 		}
 
 		function fail1() {
@@ -392,7 +411,6 @@ mediaType: type});
 /* don't need, it should automatically get saved*/
 	
 		function onSuccess(imageData) {
-			alert(imageData)
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
@@ -422,16 +440,36 @@ mediaType: type});
 		    $.ajax({url: "https://lushmatch.com/iupload.php",
 		          type: 'POST',
 		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
-		          success: function(data, status, xhr) {alert()}
+		          success: function(data, status, xhr) {
+					$.confirm({
+						buttons: {
+							b1: {
+								text: 'Upload Another', // text for button
+								btnClass: 'btn-blue', // class for the button
+								action: function(){
+									take_photo()
+								}
+							},
+							b2: {
+								text: 'Go Back', // text for button
+								btnClass: 'btn-red', // class for the button
+								action: function(){
+									history.go(-1)
+								}
+							}
+						}
+					});
+		
+				}
 		    });      
 		}
 
 		function win(r) {
-			alert(r)
+			
 		}
 
 		function fail(error) {
-			alert("An error has occurred: "+error)
+			$.alert({title:'error',content:"An error has occurred: "+error})
 		}	
 
 		var currPage='uploadPhoto.html'
