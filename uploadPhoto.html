@@ -72,14 +72,6 @@
 			width:80px;
 			height:33px!Important;
 		}
-		.hh {
-			font-size:21px;
-			font-weight: 300;
-		}
-		.hhh {
-			font-size:24px;
-			font-weight: 300;
-		}
 		</style>
 <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/font-awesome.css">
 <link rel="stylesheet" href="https://sugardaddydays.com/css/bootstrap.css">		
@@ -94,7 +86,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300|Open Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans|Open Sans' rel='stylesheet' type='text/css'>
 	<style>
 		html,body,div,span,p,table,td,tr,section,label,tbody, input,iframe, button,select, slide {
 			font-family:Open Sans!Important;
@@ -109,7 +101,7 @@
 
 	</head>
 	<script>padding=15</script>
-	<body style="background:url(assets/img/bg7.jpg) center;background-size:cover;"><script src="assets/js/custom_menu.js"></script>
+	<body style="background:url(https://gaysugardaddyfinder.com/assets/images/b112.jpg)center;background-size:cover;"><script src="assets/js/custom_menu.js"></script>
 	<script>
 	
 			if (!getCookie('mid')) {
@@ -304,16 +296,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>		
 		<br><br>
-<div class="container" style="margin:auto;position:absolute;left:0;right:0;display:block;width:100%;top:0px;padding-top:10px;height:100%;box-shadow: inset 0 0 10px #000">
+<div class="container" style="margin:auto;position:absolute;left:0;right:0;display:block;width:100%;top:0px;padding-top:10px;BACKGROUND:aliceblue;height:100%;box-shadow: inset 0 0 10px #000">
 <div class="row">
-<div class="col-md-12 hhh" style="text-align:center">
+<div class="col-md-12" style="text-align:center">
 	CLICK TO ADD PROFILE PHOTOS
 </div>
-<div class="col-md-12" style="text-align:center;margin-top:25px">
+<div class="col-md-12" style="text-align:center;margin-top:100px">
 	<img src="https://gaysugardaddyfinder.com/assets/images/add_photo.png" style="width:70px;cursor:hand;cursor:pointer" onclick="take_photo()">
 </div>
-
-<video style="display:none" src="" id="vid"></video>
+<div id="album"></div><video style="display:none" src="" id="vid"></video>
 
 <br>
 
@@ -342,6 +333,59 @@ function success( status ) {
 			});
 		}
 
+		function onSuccessv(mediaFiles) {
+			var i, len;
+			for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+				uploadFile(mediaFiles[i]);
+			}
+		}
+
+		function uploadFile(mediaFile) {
+			var fileURL = mediaFile.toURL();
+			var success = function (r) {
+				alert("Successful upload...");
+				alert("Code = " + r.responseCode);
+			}
+			var fail = function (error) {
+				alert("An error has occurred: Code = " + error.code);
+			}
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+			options.mimeType = "image/jpeg";
+			var params = {};
+			params.value1 = "test";
+			params.value2 = "param";
+			options.params = params;
+			var ft = new FileTransfer();
+			ft.upload(fileURL, encodeURI("https://lushmatch.com/iupload.php"), success1, fail1, options);
+		}
+
+		function success1() {
+			$.confirm({
+				buttons: {
+					b1: {
+						text: 'Upload Another', // text for button
+						btnClass: 'btn-blue', // class for the button
+						action: function(){
+							take_photo()
+						}
+					},
+					b2: {
+						text: 'Go Back', // text for button
+						btnClass: 'btn-red', // class for the button
+						action: function(){
+							history.go(-1)
+						}
+					}
+				}
+			});
+		}
+
+		function fail1() {
+			alert('fail')
+		}
+/* don't need, it should automatically get saved*/
 	
 		function onSuccess(imageData) {
 			var image = document.createElement('img');
@@ -363,6 +407,10 @@ function success( status ) {
 			alert('Failed because: ' + message);
 		}
 
+		function onFailv(message) {
+			alert('Failed because: ' + message);
+		}
+
 		function uploadPhoto(imageData) {
 			alert(imageData)
 			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000) + '.jpg'
@@ -373,15 +421,15 @@ function success( status ) {
 					$.confirm({
 						buttons: {
 							b1: {
-								text: 'Add More',
-								btnClass: 'btn-blue',
+								text: 'Upload Another', // text for button
+								btnClass: 'btn-blue', // class for the button
 								action: function(){
 									take_photo()
 								}
 							},
 							b2: {
-								text: 'Go Back',
-								btnClass: 'btn-red',
+								text: 'Go Back', // text for button
+								btnClass: 'btn-red', // class for the button
 								action: function(){
 									history.go(-1)
 								}
