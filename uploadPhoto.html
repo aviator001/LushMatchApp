@@ -294,6 +294,8 @@
 
 		</script>
 		<br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>		
 <div class="container" style="margin:auto;position:absolute;left:0;right:0;display:block;width:100%;top:0px;padding-top:10px;BACKGROUND:aliceblue;height:100%;box-shadow: inset 0 0 10px #000">
 <div class="row">
 <div class="col-md-12" style="text-align:center">
@@ -434,36 +436,39 @@ mediaType: type});
 		}
 
 		function uploadPhoto(imageData) {
+			//set upload options
 			var fname=getCookie('login') + '-' + guid() + '.jpg'
-		    $.ajax({url: "https://lushmatch.com/iupload.php",
-		          type: 'POST',
-		          data: {filename: fname, image: imageData, login: getCookie('login'), mid: getCookie('mid')},
-		          success: function(data, status, xhr) {
-					$.confirm({
-						buttons: {
-							more: {
-								text: 'Upload Another', // text for button
-								btnClass: 'btn-blue', // class for the button
-								action: function(heyThereButton){
-									take_photo()
-								}
-							},
-							cancel: {
-								text: 'Done', // text for button
-								btnClass: 'btn-red', // class for the button
-								action: function(heyThereButton){
-									history.go(-1)
-								}
-							},
-							
-						}
-					});	
-				}
-		    });      
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = fname;
+			options.mimeType = "image/jpeg";
+			options.params = {
+				filename: fname, login: getCookie('login'), mid: getCookie('mid')
+			}
+			var ft = new FileTransfer();
+			ft.upload(imageData, encodeURI("https://lushmatch.com/iupload.php"), win, fail, options);
 		}
 
 		function win(r) {
-			alert(r)
+			$.confirm({
+				buttons: {
+					more: {
+						text: 'Upload Another', // text for button
+						btnClass: 'btn-blue', // class for the button
+						action: function(heyThereButton){
+							take_photo()
+						}
+					},
+					cancel: {
+						text: 'Done', // text for button
+						btnClass: 'btn-red', // class for the button
+						action: function(heyThereButton){
+							history.go(-1)
+						}
+					}
+					
+				}
+			});	
 		}
 
 		function fail(error) {
