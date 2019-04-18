@@ -323,6 +323,29 @@ function success( status ) {
 }
 
 
+		var imx=0
+		function takeVideo(){
+			navigator.device.capture.captureVideo(function(videoData){
+			},attachMedia.captureVideoError, {
+			limit : 1,
+			duration: 60,
+			saveToPhotoAlbum:true
+			});
+		};
+
+    function onPhotoURISuccess(imageURI) {
+        uploadFile(imageURI,"library");
+    }
+    function getVideo(source, type) {
+            navigator.camera.getPicture(onPhotoURISuccess, onFail2, { quality:
+50, destinationType: destinationType.FILE_URI, sourceType: source,
+mediaType: type});
+
+    }
+    function onFail2(message) {
+        alert('Error');
+    }
+	
 	
 		function take_photo() {
 			navigator.camera.getPicture(onSuccess, onFail, { 
@@ -362,24 +385,7 @@ function success( status ) {
 		}
 
 		function success1() {
-			$.confirm({
-				buttons: {
-					b1: {
-						text: 'Upload Another', // text for button
-						btnClass: 'btn-blue', // class for the button
-						action: function(){
-							take_photo()
-						}
-					},
-					b2: {
-						text: 'Go Back', // text for button
-						btnClass: 'btn-red', // class for the button
-						action: function(){
-							history.go(-1)
-						}
-					}
-				}
-			});
+			alert('ok')
 		}
 
 		function fail1() {
@@ -388,6 +394,7 @@ function success( status ) {
 /* don't need, it should automatically get saved*/
 	
 		function onSuccess(imageData) {
+			alert(imageData)
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
@@ -417,36 +424,16 @@ function success( status ) {
 		    $.ajax({url: "https://lushmatch.com/iupload.php",
 		          type: 'POST',
 		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
-		          success: function(data, status, xhr) {
-					$.confirm({
-						buttons: {
-							b1: {
-								text: 'Upload Another', // text for button
-								btnClass: 'btn-blue', // class for the button
-								action: function(){
-									take_photo()
-								}
-							},
-							b2: {
-								text: 'Go Back', // text for button
-								btnClass: 'btn-red', // class for the button
-								action: function(){
-									history.go(-1)
-								}
-							}
-						}
-					});
-		
-				}
+		          success: function(data, status, xhr) {alert()}
 		    });      
 		}
 
 		function win(r) {
-			
+			alert(r)
 		}
 
 		function fail(error) {
-			$.alert({title:'error',content:"An error has occurred: "+error})
+			alert("An error has occurred: "+error)
 		}	
 
 		var currPage='uploadPhoto.html'
