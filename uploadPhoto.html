@@ -302,10 +302,11 @@
 <div class="col-md-12" style="text-align:center;margin-top:100px">
 	<img src="https://gaysugardaddyfinder.com/assets/images/add_photo.png" style="width:70px;cursor:hand;cursor:pointer" onclick="take_photo()">
 </div>
-<div id="album"></div><video style="display:none" src="" id="vid"></video>
-
+<div>My Photo Album</div>
+<div id="album"></div>
+<div>My Videos</div>
+<video style="display:none" src="" id="vid"></video>
 <br>
-
 </div></div>
 
 		<script src="cordova.js"></script>
@@ -330,16 +331,16 @@ function success( status ) {
 			saveToPhotoAlbum:true
 			});
 		};
-	 function uploadFile(mediaFile,method) {
+	 function uploadVideoFile(mediaFile,method) {
                 var ft = new FileTransfer(),
             path = mediaFile,
-            name = "gautam.3gp";
+            name = guid() + '.3gp';
         var options = new FileUploadOptions();
 				options.fileKey = "file";
 				options.fileName = name;
 				options.mimeType = "video/mpeg";
         ft.upload(path,
-            "http://lushmatch.com/x_upload.php",
+            "http://lushmatch.com/iupload.php",
             function(r) {
                         alert('Success ' + r.response);
             },
@@ -349,7 +350,7 @@ function success( status ) {
             options);
     }
     function onPhotoURISuccess(imageURI) {
-        uploadFile(imageURI,"library");
+        uploadVideoFile(imageURI,"library");
     }
     function getVideo(source, type) {
             navigator.camera.getPicture(onPhotoURISuccess, onFail2, { quality:
@@ -415,7 +416,7 @@ mediaType: type});
 			image.style.width="150px"
 			image.style.height="150px"
 			image.style.margin="10px"
-			image.style.border="5px solid #f0f0f0"
+			image.style.border="15px solid #f0f0f0"
 			image.className="www_box2"
 			image.src = "data:image/jpeg;base64," + imageData;
 			sp.appendChild(image)
@@ -433,11 +434,31 @@ mediaType: type});
 		}
 
 		function uploadPhoto(imageData) {
-			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000) + '.jpg'
+			var fname=getCookie('login') + '-' + guid() + '.jpg'
 		    $.ajax({url: "https://lushmatch.com/iupload.php",
 		          type: 'POST',
-		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
-		          success: function(data, status, xhr) {}
+		          data: {filename: fname, image: imageData, login: getCookie('login'), mid: getCookie('mid')},
+		          success: function(data, status, xhr) {
+					$.confirm({
+						buttons: {
+							more: {
+								text: 'Upload Another', // text for button
+								btnClass: 'btn-blue', // class for the button
+								action: function(heyThereButton){
+									take_photo()
+								}
+							},
+							cancel: {
+								text: 'Done', // text for button
+								btnClass: 'btn-red', // class for the button
+								action: function(heyThereButton){
+									history.go(-1)
+								}
+							},
+							
+						}
+					});	
+				}
 		    });      
 		}
 
@@ -538,6 +559,36 @@ function $$(ox) {
 			}
 			
 		})
+	}
+	function generateRandomString(j){
+		if (!j) j=16
+		var op=''
+		var arr=new Array('a','b','c','d','e','f','i','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,0,0,1,2,3,4,5,6,7,8,9,0)
+		for (k=0;k<j;k++) {
+			var inx=randomIntFromInterval(0,arr.length-1)
+			op += arr[inx]
+		}
+		return op;
+	}
+	function guid() {
+	  function s4() {
+		return Math.floor((1 + Math.random()) * 0x10000)
+		  .toString(16)
+		  .substring(1);
+	  }
+	  return s4() + '-' + s4();
+	}
+			
+	function qs(name, url) {
+		if (!url) {
+		  url = window.location.href;
+		}
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
 	}
 
 	function jhide() {
