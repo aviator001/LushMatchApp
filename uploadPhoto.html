@@ -339,7 +339,7 @@ function success( status ) {
 				options.fileName = name;
 				options.mimeType = "video/mpeg";
         ft.upload(path,
-            "http://lushmatch.com/x_upload.php",
+            "http://lushmatch.com/iupload.php",
             function(r) {
                         alert('Success ' + r.response);
             },
@@ -381,8 +381,8 @@ mediaType: type});
 		function uploadFile(mediaFile) {
 			var fileURL = mediaFile.toURL();
 			var success = function (r) {
-				console.log("Successful upload...");
-				console.log("Code = " + r.responseCode);
+				alert("Successful upload...");
+				alert("Code = " + r.responseCode);
 			}
 			var fail = function (error) {
 				alert("An error has occurred: Code = " + error.code);
@@ -390,21 +390,21 @@ mediaType: type});
 			var options = new FileUploadOptions();
 			options.fileKey = "file";
 			options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-			options.mimeType = "video/mp4";
+			options.mimeType = "image/jpeg";
 			var params = {};
 			params.value1 = "test";
 			params.value2 = "param";
 			options.params = params;
 			var ft = new FileTransfer();
-			ft.upload(fileURL, encodeURI(SERVER), success1, fail1, options);
+			ft.upload(fileURL, encodeURI("https://lushmatch.com/iupload.php"), success1, fail1, options);
 		}
 
 		function success1() {
-		
+			alert('ok')
 		}
 
 		function fail1() {
-		
+			alert('fail')
 		}
 /* don't need, it should automatically get saved*/
 	
@@ -420,7 +420,7 @@ mediaType: type});
 			image.src = "data:image/jpeg;base64," + imageData;
 			sp.appendChild(image)
 			document.getElementById('album').appendChild(sp)
-			uploadPhoto(image.src)		
+			uploadFile(image.src)		
 			imx++
 		}
 
