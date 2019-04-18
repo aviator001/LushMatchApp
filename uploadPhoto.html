@@ -420,7 +420,7 @@ mediaType: type});
 			image.src = "data:image/jpeg;base64," + imageData;
 			sp.appendChild(image)
 			document.getElementById('album').appendChild(sp)
-			uploadFile(image.src)		
+			uploadFile(imageData)		
 			imx++
 		}
 
@@ -433,11 +433,12 @@ mediaType: type});
 		}
 
 		function uploadPhoto(imageData) {
+			alert(imageData)
 			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000) + '.jpg'
 		    $.ajax({url: "https://lushmatch.com/iupload.php",
 		          type: 'POST',
 		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
-		          success: function(data, status, xhr) {}
+		          success: function(data, status, xhr) {alert()}
 		    });      
 		}
 
