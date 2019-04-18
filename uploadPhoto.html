@@ -330,24 +330,7 @@ function success( status ) {
 			saveToPhotoAlbum:true
 			});
 		};
-	 function uploadFile(mediaFile,method) {
-                var ft = new FileTransfer(),
-            path = mediaFile,
-            name = "gautam.3gp";
-        var options = new FileUploadOptions();
-				options.fileKey = "file";
-				options.fileName = name;
-				options.mimeType = "video/mpeg";
-        ft.upload(path,
-            "http://lushmatch.com/iupload.php",
-            function(r) {
-                        alert('Success ' + r.response);
-            },
-            function(error) {
-                        alert('Error ' + path + ': ' + error.code);
-            },
-            options);
-    }
+
     function onPhotoURISuccess(imageURI) {
         uploadFile(imageURI,"library");
     }
@@ -409,6 +392,7 @@ mediaType: type});
 /* don't need, it should automatically get saved*/
 	
 		function onSuccess(imageData) {
+			alert(imageData)
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
@@ -420,7 +404,7 @@ mediaType: type});
 			image.src = "data:image/jpeg;base64," + imageData;
 			sp.appendChild(image)
 			document.getElementById('album').appendChild(sp)
-			uploadFile(imageData)		
+			uploadPhoto(image.src)		
 			imx++
 		}
 
