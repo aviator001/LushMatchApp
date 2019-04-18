@@ -131,7 +131,7 @@
 	}
 	
 	function preview_profile() {
-		location.href="profile.html?id="+getCookie('mid')
+		location.href="profile.html?id="+getCookie('mid')+'&type=preview'
 	}
 
 	if (!padding) {

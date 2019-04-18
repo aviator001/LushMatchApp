@@ -111,7 +111,17 @@
 		return document.getElementById(obj)
 	}
 
-		
+	var imgG, div, data=[], looking_for, watchID, tmr, hidden, shown, active
+	var currMID
+	var mids=[]
+	var str='', fn, active='2'
+	var ctr
+	var imgG, div, data=[], looking_for, watchID, tmr
+	var currUR=100000
+	currMID=qs('id')
+	setCookie('currMID',qs('id'))
+
+			
 	setTimeout('showWait()',1)
 	setTimeout('getIP()',1)
 	setTimeout('getLocation()',1)
@@ -134,17 +144,7 @@
 	}
 
 	
-	var imgG, div, data=[], looking_for, watchID, tmr, hidden, shown, active
-	var currMID
-	var mids=[]
-	var str='', fn, active='2'
-	var ctr
-	var imgG, div, data=[], looking_for, watchID, tmr
-	var currUR=100000
-	currMID=qs('id')
-	setCookie('currMID',qs('id'))
 
-	
 	function mobile_render() {
 
 	}
@@ -272,7 +272,7 @@
 				setCookie('chatting_with_login', data[i].login)
 				setCookie('chatting_with_mobile', data[i].mobile)
 				if (data[i].filename_1=='') fn = 'assets/images/no_photo.png'
-					else fn='https://lushmatch.com/sbx/'+data[i].filename_1
+					else fn='https://lushmatch.com/sb/'+data[i].filename_1
 				$$('imgProfile'+i).src=fn
 				if (qs('type')) {
 					detectswipe('p'+id, myfunction);	
@@ -282,26 +282,26 @@
 			}
 		})
 	}
-		var objData=[]
+	
+	var objData=[]
 	function video_call(to_login) {
-		//video_invite_sms(to_login,getCookie('login'))
+		video_invite_sms(to_login,getCookie('login'))
 		objData={
-					data				: 	'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/new_video_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW VIDEO CALL FROM '+ to_login() + '</span><a href="inbox#'+getCookie('mid')+'"><img onclick="read_notified_mail('+to+')" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/open_email.png"></a><img onclick="closeToaster()" src="https://gaysugardaddyfinder.com/assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>',
+					msg					: 	'<span id="toaster"><img style="height:25px;position:fixed;left:5px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/new_video_msg.png"><span style="margin-left:40px;font-family:Open Sans; font-weight:300">NEW VIDEO CALL FROM '+ to_login + '</span><a href="inbox#'+getCookie('mid')+'"><img onclick="START VIEDEO IM" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:35px;padding-bottom:5px" src="https://gaysugardaddyfinder.com/assets/images/open_email.png"></a><img onclick="closeToaster()" src="https://gaysugardaddyfinder.com/assets/images/close_email.png" style="cursor:hand;cursor:pointer;height:27px;position:fixed;right:5px;padding-bottom:5px"><span>',
 					toUser				: 	to_login,
 					type				: 	'NEW_VIDEO',
 					fromUser			: 	getCookie('login'),
 					fromLongCode		: 	getCookie('long_code')
 		}
 		socket.send(JSON.stringify({type:'NEW_VIDEO', data: objData}))
-		location.href='https://gaysugardaddyfinder.com/channel.html?login='+getCookie('login')+'&action=1'
-		console.log(objData)
+		location.href='https://terrawire.com:9001/demos/?login='+getCookie('login')+'&action=1'
 	}
+	
 
 	function video_invite_sms(to_login, from_login) {
-		$.ajax({url:'sendSMS.php?to_login='+to_login+'&from_login='+from_login+'&from_long_code='+getCookie('long_code'),success:function(data){console.log(data);location.href=''}})
+		$.dialog({url:'https://lushmatch.com/sendSMS.php?to_login='+to_login+'&from_login='+from_login+'&from_long_code='+getCookie('long_code'),success:function(data){console.log(data);location.href='https://lushmatch.com/channel.html?login='+getCookie('login')+'&action=1'}})
 	}
-	
-	
+		
 	function toggle_favs() {
 		var url = 'x_add_fav.php?to=' + currMID + '&from=' + getCookie('mid')
 		console.log(url)
