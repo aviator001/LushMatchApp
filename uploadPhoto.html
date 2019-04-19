@@ -451,7 +451,24 @@
 	}
 
 	function win(r) {
-		alert(r)
+		$.confirm({
+			buttons: {
+				b1: {
+					text: 'Add More',
+					btnClass: 'btn-blue',
+					action: function(){
+						take_photo()
+					}
+				},
+				b2: {
+					text: 'Go Back',
+					btnClass: 'btn-red',
+					action: function(){
+						history.go(-1)
+					}
+				}
+			}
+		});
 	}
 
 	function fail(error) {
@@ -526,6 +543,7 @@
 		}
 	}	
 	var to_u=qs('member_id')
+	
 	function send_message() {
 		var message=document.getElementById('mail_pad').value
 		message=message.replace(/\&/g,'\&amp;')
@@ -588,7 +606,7 @@
 			$('#quickSearchTerm').val( ui.item.value);
 		}
 	});
-	$( "#quickSearchTerm" ).autocomplete( "option", "appendTo", "#xresults" );
+	if ($( "#quickSearchTerm" )) $( "#quickSearchTerm" ).autocomplete( "option", "appendTo", "#xresults" );
 
 	
 </script>

@@ -466,6 +466,7 @@
 		};
 		var	id = navigator.geolocation.getCurrentPosition(a, b, options);
 	}
+
 	function loc() {
 		$.ajax({
 			url: "https://lushmatch.com/x_location.php",
@@ -503,16 +504,18 @@
 	}
 		
 	function a(p) {
+		console.log('https://lushbytes.com/x_get_address.php?lat='+p.coords.latitude+'&lng='+p.coords.longitude)
 		setCookie('lat',p.coords.latitude)
 		setCookie('lng',p.coords.longitude)
 		setCookie('accurate',"1")
 		$.ajax({
-			url: "https://lushmatch.com/x_location.php",
+			url: 'https://lushbytes.com/x_get_address.php?lat='+p.coords.latitude+'&lng='+p.coords.longitude,
 			type: "GET",
 			dataType: "html",
 			success: function(msg){
 				if (!!msg) {
-					var data=JSON.parse(msg)[0]
+					var data=JSON.parse(msg)
+					console.log(data)
 					setCookie('city', data.city)
 					setCookie('state', data.state)
 					setCookie('zip', data.zip)
@@ -522,9 +525,7 @@
 		})
 	}
 
-	function error() {
-		//getLocation()
-	}
+
 	function screen_dimensions() {
 		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -630,60 +631,6 @@
 			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 		}	
 	}
-	var formatted_address
-	function onError() {}
-	
-	function getLocation()	{
-		onDeviceReady()
-	}
-	
-	function getPosition(position) {
-		if (getCookie('accurate')) return false
-		var geocoder = new google.maps.Geocoder();
-		var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-		geocoder.geocode({'latLng': latlng}, function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			if (results[0]) {
-				formatted_address = results[0].formatted_address
-				var address = "", city = "", state = "", zip = "", country = "";
-				for (var i = 0; i < results[0].address_components.length; i++) {
-					var addr = results[0].address_components[i];
-					if (addr.types[0] == 'country')
-						country = addr.long_name;
-					else if (addr.types[0] == 'street_address')
-						address = address + addr.long_name;
-					else if (addr.types[0] == 'establishment')
-						address = address + addr.long_name;
-					else if (addr.types[0] == 'route')
-						address = address + addr.long_name;
-					else if (addr.types[0] == 'postal_code')
-						zip = addr.short_name;
-					else if (addr.types[0] == ['administrative_area_level_1'])
-						state = addr.short_name;
-					else if (addr.types[0] == ['locality'])
-						city = addr.long_name;
-				}
-				street_no=results[0].address_components[0].short_name
-				street=results[0].address_components[1].short_name
-				full_address = formatted_address
-				full_address=street_no + ', ' + street + ' ' + city + ' ' + state + ' ' + zip + ' '  + country
-				console.log(full_address)
-				setCookie('location',city + ', ' + state + ' ' + zip)
-				setCookie('x-location',city + ', ' + state + ' ' + zip)
-				setCookie('street_no',street_no)
-				setCookie('street',street)
-				setCookie('city',city)
-				setCookie('state',state)
-				setCookie('zip',zip)
-				setCookie('lat',position.coords.latitude)
-				setCookie('lng',position.coords.longitude)
-				setCookie('accurate','1')
-				console.log(full_address)
-				jalert(full_address)
-			}
-		}
-	});
-}
 
 	function jwait(objTxt) {
 		objT.innerHTML=objTxt

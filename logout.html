@@ -6,17 +6,17 @@
 		<meta name="description" content="A gay sugar daddy dating site that connects handsome wealthy and caring men to hot young women. Worlds first gay sugar daddy site to use disruptive SMS messaging. Find a Gay Sugar Daddy today!" />		
 		<meta name="Author" content="Gautam Sharma" />		
 		<meta name="format-detection" content="telephone=no"/>
-		<title>gay sugar daddy dating | GaySugarDaddyFinder.com</title>
+		<title>Sugar Daddy Dating | LushMatch.com</title>
 		<link rel="canonical" href="">
 		<link rel="icon" href="assets/img/favicon.png">
-		<link href="assets/css/font-awesome.css" rel="stylesheet" >
-		<link href="assets/css/jquery-confirm.css" rel="stylesheet" />
-		<link href="assets/css/shadows.css" rel="stylesheet" />
-		<link href="assets/css/jquery-ui.css" rel="stylesheet" />
-		<link href="assets/css/dropzone.css" rel="stylesheet">
-		<link href="assets/css/bootstrap.css" rel="stylesheet">
-		<link href="assets/css/menu.css" rel="stylesheet">
-		<link href="assets/css/font-awesome.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/font-awesome.css" rel="stylesheet" >
+		<link href="https://lushmatch.com/assets/css/jquery-confirm.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/shadows.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/jquery-ui.css" rel="stylesheet" />
+		<link href="https://lushmatch.com/assets/css/dropzone.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/menu.css" rel="stylesheet">
+		<link href="https://lushmatch.com/assets/css/font-awesome.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet"> 
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Open+Sans:300' rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,18 +31,42 @@
 		}
 		</style>
 </head>
-<body style="background:#111"><script src="assets/js/jquery.js"></script><script src="assets/js/custom_menu_no_auth.js"></script>
-	<a href="/">
-	<div class="container" style="width:320px;padding:0"></div>
-	<img src="https://sugardaddydays.com/assets/images/bp.jpg" style="position:absolute;top:0;left:0;right:0;width:100%;height:100%">
-	<img src="https://sugardaddydays.com/assets/images/bboard.png" style="position:absolute;top:200px;left:0;right:0;width:200px;margin:auto">
-	<img id="i1" src="https://sugardaddydays.com/assets/images/00.gif" style="opacity:0.3;display:;position:absolute;top:0;left:0;right:0;width:200px;margin:auto;">
-	<img id="i1" src="https://sugardaddydays.com/assets/images/00.gif" style="opacity:0.3;display:;position:absolute;top:50px;left:0;right:0;width:100%;margin:auto;">
-	</a>
-</body>
 <script>
-	del_cookies()
+	
+	function getCookie(cname)	{ 
+		if (window.location.href.indexOf('file://')>=0) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (window.location.href.indexOf('file://')>=0) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	setCookie('login','')
+	setCookie('mid','')
+	setCookie('mobile','')
+	setCookie('email','')
+	setCookie('currMID','')
 	setTimeout(function(){
-		window.location.href='home'
-	},5000)
+		window.location.href='index.html'
+	},1000)
 </script>	
