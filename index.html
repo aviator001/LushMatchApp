@@ -32,7 +32,7 @@
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> 
 		<![endif]-->
 </head>
 	<body>
@@ -53,17 +53,14 @@
 								<div class="icon-bar"></div>
 								<div class="icon-bar"></div>
 								</button>
-								<img style="position:absolute;left:5px;top:10px;" src="assets/img/search-icon.png"><a class="" href="index.html"><img src="assets/img/logo_narrow.png" id="logo_upper" alt="" style="width:200px;position:absolute;top:25px;left:50px"></a>
+								<a class="" href="index.html"><img src="assets/img/logo_index.png" id="logo_upper" alt="" style="width:200px;position:absolute;top:25px;left:50px"></a>
 							</div>
 							<div class="collapse navbar-collapse" style="background:">
-								<a class="navbar-brand mobile pull-left" href="#"><img src="assets/img/menu_logo.png" style="width:250px;margin-top:10px"></a>
+								<a class="navbar-brand mobile pull-left" href="#"><img src="assets/img/logo_index.png" style="width:250px;margin-top:10px"></a>
 								<a class="mobile-menu-close"><i class="fa fa-random"></i></a>
 								<ul id="mobile_menu" class="list-unstyled" style="display:none">
 									<li style="padding:10px"><br><br></li>
 									<li style="border-top:1px solid silver;padding:10px;background:whitesmoke"><a href="index.html"><i class="fa fa-home" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">HOME</span></a></li>
-									<li style="border-top:1px solid silver;padding:10px;background:whitesmoke"><a href="support"><i class="fa fa-camera" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">SUPPORT</span></a></li>
-									<li style="border-top:1px solid silver;padding:10px;background:whitesmoke"><a href="search"><i class="fa fa-search" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">SEARCH</span></a></li>
-									<li style="border-top:1px solid silver;padding:10px;background:whitesmoke"><a href="contact"><i class="fa fa-archive" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">CONTACT</span></a></li>
 									<li style="border-top:1px solid silver;padding:10px;background:azure"><a href="javascript:login()"><i class="fa fa-flash" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">LOGIN</span></a></li>
 								</ul>
 								<ul id="mobile_menu_authenticated" class="list-unstyled" style="display:none">
@@ -81,18 +78,6 @@
 									<li style="border-top:1px solid silver;border-bottom:1px solid silver;padding:10px;background:gold"><a href="logout"><i class="fa fa-sign-out" style="margin-left:15px;font-size:24px;color:#111"></i><span style="margin-left:15px">LOGOUT</span></a></li>								
 								</ul>
 								<ul id="desktop_menu" class="nav navbar-nav nav-list unstyled" style="display:none">
-									<li>
-										<a href="index.html"><i class="fa fa-briefcase"></i><div class="link-item">Home</div></a>
-									</li>
-									<li>
-										<a href="support"><i class="fa fa-university"></i><div class="link-item">Support</div></a>
-									</li>
-									<li>
-										<a href="contact"><i class="fa fa-cubes"></i><div class="link-item">Contact</div></a>
-									</li>
-									<li>
-										<a href="search"><i class="fa fa-cubes"></i><div class="link-item">Search</div></a>
-									</li>
 									<li>
 										<a href="index.html"><i class="fa fa-cubes"></i><div class="link-item">Login</div></a>
 									</li>
@@ -213,46 +198,7 @@
 			<img id="imgSearchWait" src="assets/img/load.gif" alt="waiting for my sugar daddy or sugar baby" style="position:absolute;z-index:999999999999;margin-top:-500px;margin-left:-50px;width:100px;display:none">
 		</div>
 	</section>
-	<section class="page-wrapper bot0">
-		<h2 class="title">MEMBER PHOTO GALLERY</h2>
-		<p class="tagline">
-			 Click a category below to view some of our members. Whether you are a sugar daddy or a sugar baby, we are confident that you will find a like minded sugar daddy or sugar baby to connect with immediately, for free.
-		</p>
-		<div id="" class="text-center">
-			<ul class="portfolio-filter-list">
-				<li><a class="hand" style="background:lavenderblush" onclick="setGender()"><div id="sp0">SHOW SUGAR DADDIES</div></a></li>
-				<li><a id="popular" class="hand" onclick="getPhotoGallery('popular')"><div>POPULAR</div></a></li>
-				<li><a id="photos" class="hand active" onclick="getPhotoGallery('photos')"><div>NEW PHOTOS</div></a></li>
-				<li><a id="latest" class="hand" onclick="getPhotoGallery('latest')"><div>LATEST</div></a></li>
-				<li><a id="local" class="hand" onclick="getPhotoGallery('local')"><div>IN YOUR AREA</div></a></li>
-			</ul>
-		</div>
-		<div class="container" style="text-align:center">
-			<h2 class="title" id="browse_summary"></h2>
-			<div class="row" id="photoGallery">
 
-			</div>
-			<img id="imgWait" src="assets/img/load.gif" alt="waiting for my sugar daddy or sugar baby" style="position:absolute;z-index:999999999999;margin-top:-500px;margin-left:-50px;width:100px;display:none">
-		</div>
-	</section>
-
-<!-- Fun Facts
-================================================== -->
-
-	<!-- Timeline
-	================================================== -->
-	<section id="tline" class="page-wrapper gray">
-		<div class="container">
-			<h2 class="title">Blog</h2>
-			<div class="row">
-				<div class="col-md-12">
-					<ul id="blog"  class="tline-holder">
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section id="footer" class="footer">
 		<div class="container">
 			<div class="row">
@@ -264,9 +210,9 @@
 						<li class="wow bounceIn animated" data-wow-delay="0.4s"><a href="#."><i class="fa fa-dribbble"></i></a></li>
 						<li class="wow bounceIn animated" data-wow-delay="0.5s"><a href="#."><i class="fa fa-pinterest"></i></a></li>
 					</ul>
-					<a href="index.html"><img src="assets/img/logo_dark.png" class="footerlogo wow zoomIn" alt="caymanlogo"></a>
+					<a href="index.html"><img src="assets/img/logo_footer.png" class="footerlogo wow zoomIn" alt="caymanlogo"></a>
 					<p class="copyright">
-						 &copy;2018 Gay SugarDaddyFinder.com. All rights reserved.
+						 &copy;2019 SugarDaddyLocal.com. All rights reserved.
 					</p>
 				</div>
 			</div>
